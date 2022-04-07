@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/countries.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:uangku/screen/verification_screen.dart';
 import 'package:uangku/theme.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -84,10 +85,10 @@ class SignUpScreen extends StatelessWidget {
                       height: 60,
                       child: RaisedButton(
                         onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => VerificationScreen()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => VerificationScreen()));
                         },
                         color: blueColor,
                         shape: RoundedRectangleBorder(
