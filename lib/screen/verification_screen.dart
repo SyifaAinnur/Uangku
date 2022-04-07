@@ -1,9 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_verification_box/verification_box.dart';
 import 'package:uangku/theme.dart';
 
-class VerificationScreen extends StatelessWidget {
+class VerificationScreen extends StatefulWidget {
+  const VerificationScreen({Key? key}) : super(key: key);
+
+  @override
+  State<VerificationScreen> createState() => _VerificationScreenState();
+}
+
+class _VerificationScreenState extends State<VerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,9 +17,9 @@ class VerificationScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: whiteColor,
-        leading: Icon(
-          Icons.arrow_back,
-          color: blackColor,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back,color: Colors.black),
+          onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: SafeArea(
@@ -47,16 +53,20 @@ class VerificationScreen extends StatelessWidget {
                   height: 10,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: edge),
-                  child: Container(
-                    height: 50,
-                    child: VerificationBox(
-                      focusBorderColor: Colors.lightBlue,
-                      borderWidth: 2,
-                      borderRadius: 20,
-                    ),
-                  ),
-                ),
+                    padding: EdgeInsets.symmetric(horizontal: edge),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            _textFieldOTP(first: true, last: false),
+                            _textFieldOTP(first: false, last: false),
+                            _textFieldOTP(first: false, last: false),
+                            _textFieldOTP(first: false, last: true),
+                          ],
+                        )
+                      ],
+                    )),
                 SizedBox(
                   height: 20,
                 ),
@@ -86,6 +96,41 @@ class VerificationScreen extends StatelessWidget {
           )
         ],
       )),
+    );
+  }
+
+  Widget _textFieldOTP({required bool first, last}) {
+    return Container(
+      height: 85,
+      child: AspectRatio(
+        aspectRatio: 1.0,
+        child: TextField(
+          autofocus: true,
+          onChanged: (value) {
+            if (value.length == 1 && last == false) {
+              FocusScope.of(context).nextFocus();
+            }
+            if (value.length == 0 && first == false) {
+              FocusScope.of(context).previousFocus();
+            }
+          },
+          showCursor: false,
+          readOnly: false,
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          keyboardType: TextInputType.number,
+          maxLength: 1,
+          decoration: InputDecoration(
+            counter: Offstage(),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(width: 2, color: Colors.black12),
+                borderRadius: BorderRadius.circular(12)),
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(width: 2, color: Colors.purple),
+                borderRadius: BorderRadius.circular(12)),
+          ),
+        ),
+      ),
     );
   }
 }
