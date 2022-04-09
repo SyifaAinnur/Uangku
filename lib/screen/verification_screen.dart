@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:uangku/screen/personal_screen.dart';
 import 'package:uangku/theme.dart';
 
 class VerificationScreen extends StatefulWidget {
@@ -83,10 +84,10 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 ),
                 InkWell(
                   onTap: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => PersonalScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PersonalScreen()));
                   },
                   child: Text(
                     'Resend Code',
