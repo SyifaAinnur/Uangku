@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:uangku/screen/PinScreen.dart';
 import 'package:uangku/theme.dart';
 
 class PersonalScreen extends StatefulWidget {
@@ -95,7 +96,7 @@ class _PersonalScreenState extends State<PersonalScreen> {
                           width: 335,
                           height: 60,
                           child: RaisedButton(onPressed: () {
-                            // Navigator.push(context, MaterialPageRoute(builder: (context) => PinScreen()));
+                            Navigator.push(context,MaterialPageRoute( builder: (context) => PinScreen()));
                           },
                           color: blueColor,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
