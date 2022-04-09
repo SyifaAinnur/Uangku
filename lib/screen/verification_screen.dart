@@ -60,8 +60,11 @@ class _VerificationScreenState extends State<VerificationScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             _textFieldOTP(first: true, last: false),
+                            SizedBox(width: 10),
                             _textFieldOTP(first: false, last: false),
+                            SizedBox(width: 10),
                             _textFieldOTP(first: false, last: false),
+                            SizedBox(width: 10),
                             _textFieldOTP(first: false, last: true),
                           ],
                         )
@@ -101,7 +104,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
 
   Widget _textFieldOTP({required bool first, last}) {
     return Container(
-      height: 85,
+      height: 75,
       child: AspectRatio(
         aspectRatio: 1.0,
         child: TextField(
@@ -124,10 +127,11 @@ class _VerificationScreenState extends State<VerificationScreen> {
             counter: Offstage(),
             enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(width: 2, color: Colors.black12),
-                borderRadius: BorderRadius.circular(12)),
+                borderRadius: BorderRadius.circular(20)),
+                
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: Colors.purple),
-                borderRadius: BorderRadius.circular(12)),
+                borderSide: BorderSide(width: 2, color: Colors.lightBlue),
+                borderRadius: BorderRadius.circular(20)),
           ),
         ),
       ),
