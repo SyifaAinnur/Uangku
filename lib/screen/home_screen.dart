@@ -254,7 +254,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Padding(padding: EdgeInsets.symmetric(horizontal: edge, vertical: 70,
               ),
-              child: CardBalance()),
+              // child: CardBalance()
+              ),
             ],
           ),
         ),
