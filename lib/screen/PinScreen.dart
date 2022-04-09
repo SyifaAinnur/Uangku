@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:uangku/screen/home_screen.dart';
 import 'package:uangku/theme.dart';
 
 class PinScreen extends StatefulWidget {
@@ -71,7 +72,7 @@ class _PinScreenState extends State<PinScreen> {
                         ),
                         InkWell(
                           onTap: () {
-                            // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                           },
                           child: Text('Forgot you PIN?',
                               style: whiteTextStyle.copyWith(fontSize: 14),
