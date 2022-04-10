@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:uangku/screen/inputcard_screen.dart';
 import 'package:uangku/theme.dart';
 import 'package:uangku/widget/card_item.dart';
 
@@ -126,7 +127,9 @@ class CardScrenn extends StatelessWidget {
                   height: 15,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => InputCardScreen()));
+                  },
                   child: ListTile(
                     leading: Image.asset('assets/add.png', width: 60,),
                     title: Text('Add Card', style: regularTextStyle),
