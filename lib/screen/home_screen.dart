@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:uangku/theme.dart';
+import 'package:uangku/widget/card_balance.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,49 +15,69 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomAppBar(
-          child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: edge),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      // Navigator.pushNamedAndRemoveUntil(context, MaterialPageRoute(builder: (context) => CardScreen()), (route) => false);
-                    },
-                    child: IconButton(
-                      icon: Icon(Icons.dashboard,
-                          size: 30, color: Color(0xff2E36A3)),
-                      onPressed: () {},
-                    ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: edge),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              InkWell(
+                onTap: () {
+                  // Navigator.pushAndRemoveUntil(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => CardScreen(),
+                  //     ),
+                  //     (route) => false);
+                },
+                child: IconButton(
+                  icon: Icon(
+                    Icons.dashboard,
+                    size: 30,
+                    color: Color(0xff2E36A3),
                   ),
-                  Spacer(),
-                  IconButton(
-                      icon: Icon(
-                        Icons.bar_chart,
-                        size: 30,
-                        color: Color(0xff2E36A3),
-                      ),
-                      onPressed: () {}),
-                  Spacer(),
-                  Spacer(),
-                  IconButton(
-                      icon: Icon(
-                        Icons.credit_card,
-                        size: 30,
-                        color: Color(0xff2E36A3),
-                      ),
-                      onPressed: () {}),
-                  Spacer(),
-                  IconButton(
-                      icon: Icon(Icons.account_circle,
-                          size: 30, color: Color(0xff2E36A3)),
-                      onPressed: () {}),
-                ],
-              ))),
+                  onPressed: () {},
+                ),
+              ),
+              Spacer(),
+              IconButton(
+                  icon: Icon(
+                    Icons.bar_chart,
+                    size: 30,
+                    color: Color(0xff2E36A3),
+                  ),
+                  onPressed: () {}),
+              Spacer(),
+              Spacer(),
+              IconButton(
+                  icon: Icon(
+                    Icons.credit_card,
+                    size: 30,
+                    color: Color(0xff2E36A3),
+                  ),
+                  onPressed: () {}),
+              Spacer(),
+              IconButton(
+                  icon: Icon(
+                    Icons.account_circle,
+                    size: 30,
+                    color: Color(0xff2E36A3),
+                  ),
+                  onPressed: () {}),
+            ],
+          ),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add_circle_outline),
+        child: Icon(
+          Icons.add_circle_outline,
+        ),
         onPressed: () {
-          // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => CardScreen), (route) => false);
+          // Navigator.pushAndRemoveUntil(
+          //     context,
+          //     MaterialPageRoute(
+          //       builder: (context) => CardScreen(),
+          //     ),
+          //     (route) => false);
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -65,7 +86,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/bg.png"), fit: BoxFit.cover),
+              image: AssetImage("assets/bg2.png"),
+              fit: BoxFit.cover,
+            ),
           ),
           child: Stack(
             children: [
@@ -90,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 "My Cards",
                                 style: regularTextStyle.copyWith(fontSize: 16),
                               ),
-                              Icon(Icons.chevron_right)
+                              Icon(Icons.chevron_right),
                             ],
                           ),
                         ),
@@ -102,53 +125,54 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(12),
                             child: Container(
-                              height: 178,
-                              width: MediaQuery.of(context).size.width,
-                              color: whiteColor,
-                              child: Column(
-                                children: [
-                                  ListTile(
-                                    leading: Image.asset(
-                                      'assets/card.png',
-                                      width: 60,
+                                height: 178,
+                                width: MediaQuery.of(context).size.width,
+                                color: whiteColor,
+                                child: Column(
+                                  children: [
+                                    ListTile(
+                                      leading: Image.asset(
+                                        'assets/card.png',
+                                        width: 60,
+                                      ),
+                                      title: Text(
+                                        'Virtual Card',
+                                        style: regularTextStyle,
+                                      ),
+                                      subtitle: Text(
+                                        '****  5678',
+                                        style: regularTextStyle,
+                                      ),
+                                      trailing: Text('24,000,000',
+                                          style: regularTextStyle.copyWith(
+                                              fontSize: 16)),
                                     ),
-                                    title: Text('Virtual Card',
-                                        style: regularTextStyle),
-                                    subtitle: Text(
-                                      '****  5678',
-                                      style: regularTextStyle,
+                                    Divider(
+                                      color: Color(0xffEEF2F8),
+                                      height: 25,
+                                      thickness: 1,
+                                      indent: 20,
+                                      endIndent: 20,
                                     ),
-                                    trailing: Text('24,000,000',
-                                        style: regularTextStyle.copyWith(
-                                            fontSize: 16)),
-                                  ),
-                                  Divider(
-                                    color: Color(0xffEEF2F8),
-                                    height: 25,
-                                    thickness: 1,
-                                    indent: 20,
-                                    endIndent: 20,
-                                  ),
-                                  ListTile(
-                                    leading: Image.asset(
-                                      'assets/card.png',
-                                      width: 60,
+                                    ListTile(
+                                      leading: Image.asset(
+                                        'assets/card.png',
+                                        width: 60,
+                                      ),
+                                      title: Text(
+                                        'Basic Card',
+                                        style: regularTextStyle,
+                                      ),
+                                      subtitle: Text(
+                                        '****  5678',
+                                        style: regularTextStyle,
+                                      ),
+                                      trailing: Text('4,020,000',
+                                          style: regularTextStyle.copyWith(
+                                              fontSize: 16)),
                                     ),
-                                    title: Text(
-                                      'Basic Card',
-                                      style: regularTextStyle,
-                                    ),
-                                    subtitle: Text(
-                                      '****  5678',
-                                      style: regularTextStyle,
-                                    ),
-                                    trailing: Text('4,020,000',
-                                        style: regularTextStyle.copyWith(
-                                            fontSize: 16)),
-                                  ),
-                                ],
-                              ),
-                            ),
+                                  ],
+                                )),
                           ),
                         ),
                         SizedBox(
@@ -159,10 +183,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Transactions",
-                                  style:
-                                      regularTextStyle.copyWith(fontSize: 16)),
-                              Icon(Icons.chevron_right)
+                              Text(
+                                "Transaction",
+                                style: regularTextStyle.copyWith(fontSize: 16),
+                              ),
+                              Icon(Icons.chevron_right),
                             ],
                           ),
                         ),
@@ -180,13 +205,19 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 children: [
                                   ListTile(
-                                    title: Text('Pay Laundry',
-                                        style: regularTextStyle),
-                                    subtitle: Text('20 Apr 2021',
-                                        style: regularTextStyle),
-                                    trailing: Text('- Rp. 50.000',
-                                        style: regularTextStyle.copyWith(
-                                            fontSize: 16, color: Colors.red)),
+                                    title: Text(
+                                      'Pay Laundry',
+                                      style: regularTextStyle,
+                                    ),
+                                    subtitle: Text(
+                                      '20 Apr 2021',
+                                      style: regularTextStyle,
+                                    ),
+                                    trailing: Text(
+                                      '- Rp. 50.000',
+                                      style: regularTextStyle.copyWith(
+                                          fontSize: 16, color: Colors.red),
+                                    ),
                                   ),
                                   Divider(
                                     color: Color(0xffEEF2F8),
@@ -200,27 +231,34 @@ class _HomeScreenState extends State<HomeScreen> {
                                       'Payment Job',
                                       style: regularTextStyle,
                                     ),
-                                    subtitle: Text('10 Mar 2021',
-                                        style: regularTextStyle),
-                                    trailing: Text('+ Rp. 1.050.000',
-                                        style: regularTextStyle.copyWith(
-                                            fontSize: 16, color: Colors.grey)),
+                                    subtitle: Text(
+                                      '10 Mar 2021',
+                                      style: regularTextStyle,
+                                    ),
+                                    trailing: Text(
+                                      '+ Rp. 1.050.000',
+                                      style: regularTextStyle.copyWith(
+                                          fontSize: 16, color: Colors.green),
+                                    ),
                                   ),
                                 ],
                               ),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
               SizedBox(
                 height: 90,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: edge, vertical: 4),
+                padding: EdgeInsets.symmetric(
+                  horizontal: edge,
+                  vertical: 4,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -242,19 +280,20 @@ class _HomeScreenState extends State<HomeScreen> {
                               'https://images.unsplash.com/photo-1547656807-9733c2b738c2?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'),
                         ),
                         decoration: new BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: new Border.all(
-                              color: Colors.white,
-                              width: 2.0,
-                            )),
+                          shape: BoxShape.circle,
+                          border: new Border.all(
+                            color: Colors.white,
+                            width: 2.0,
+                          ),
+                        ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
-              Padding(padding: EdgeInsets.symmetric(horizontal: edge, vertical: 70,
-              ),
-              // child: CardBalance()
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: edge, vertical: 70),
+                child: CardBalance(),
               ),
             ],
           ),
