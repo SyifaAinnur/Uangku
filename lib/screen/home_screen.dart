@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:uangku/screen/card_screen.dart';
 import 'package:uangku/theme.dart';
 import 'package:uangku/widget/card_balance.dart';
 
@@ -22,12 +23,12 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               InkWell(
                 onTap: () {
-                  // Navigator.pushAndRemoveUntil(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //       builder: (context) => CardScreen(),
-                  //     ),
-                  //     (route) => false);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CardScrenn(),
+                      ),
+                  );
                 },
                 child: IconButton(
                   icon: Icon(
@@ -72,12 +73,13 @@ class _HomeScreenState extends State<HomeScreen> {
           Icons.add_circle_outline,
         ),
         onPressed: () {
-          // Navigator.pushAndRemoveUntil(
-          //     context,
-          //     MaterialPageRoute(
-          //       builder: (context) => CardScreen(),
-          //     ),
-          //     (route) => false);
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CardScrenn(),
+              ),
+            );
+              
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
